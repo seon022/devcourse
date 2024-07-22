@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input Autofocus</title>
+    <script>
+      window.onload = function () {
+        // 첫 번째 입력 필드와 두 번째 입력 필드를 선택합니다.
+        let input1 = document.querySelectorAll("input")[0];
+        let input2 = document.querySelectorAll("input")[1];
+
+        // 첫 번째 입력 필드에 입력 이벤트를 연결합니다.
+        input1.addEventListener("input", function () {
+          // 입력된 글자 수가 6자 이상이면
+          if (input1.value.length >= 6) {
+            // 두 번째 입력 필드로 포커스를 이동합니다.
+            input2.focus();
+          }
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <input type="text" maxlength="6" />
+    <span>-</span>
+    <input type="text" maxlength="7" />
+  </body>
+</html>

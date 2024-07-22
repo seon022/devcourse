@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 이벤트
+      $(document).ready(function () {
+        // 객체 추가
+        let output = "";
+        for (let i = 0; i < 256; i++) {
+          output += "<div></div>";
+        }
+        document.body.innerHTML = output;
+
+        // 색상 계산 함수
+        function calculateColor(color1, color2, factor) {
+          let result = color1.slice();
+          for (let i = 0; i < 3; i++) {
+            result[i] = Math.round(
+              result[i] + factor * (color2[i] - result[i])
+            );
+          }
+          return result;
+        }
+
+        // 색상 문자열 변환 함수
+        function rgbToString(rgb) {
+          return "rgb(" + rgb.join(",") + ")";
+        }
+
+        // 시작 및 끝 색상
+        let startColor = [134, 171, 207]; // #86abcf
+        let endColor = [195, 142, 180]; // #c38eb4
+
+        // 스타일
+        $("div").css({
+          height: "2px",
+          backgroundColor: function (i) {
+            let factor = i / 255;
+            let color = calculateColor(startColor, endColor, factor);
+            return rgbToString(color);
+          },
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Basic</title>
+    <style>
+      h1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("h1").hover(
+          function () {
+            // 스타일을 변경합니다.
+            $(this).css({
+              background: "red",
+              color: "white",
+            });
+          },
+          function () {
+            $(this).css({
+              color: "black",
+            });
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <h1>hover</h1>
+  </body>
+</html>

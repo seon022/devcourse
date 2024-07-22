@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Object Model</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 이벤트
+      $(document).ready(function () {
+        let src = $("script").attr("src");
+        alert(src);
+
+        // 스타일
+        $("h1").css("color", "lightblue");
+        $("h1").css("background", "black");
+
+        // 속성을 지정
+        $("img").attr({
+          alt: "jquery 라이브러리 사용한 속성 지정",
+          src: function (index) {
+            let size = (index + 1) * 100;
+            return "http://via.placeholder.com/" + size + "x100";
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <img />
+    <img />
+    <img />
+  </body>
+</html>

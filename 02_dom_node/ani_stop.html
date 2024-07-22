@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Basic</title>
+    <!-- jQuery 라이브러리를 외부 CDN에서 불러옵니다. -->
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+      $(document).ready(function () {
+        // 애니메이션 제어를 위한 변수 선언
+        // clearQueue: 애니메이션 큐를 비울지 여부를 저장합니다.
+        // goToEnd: 애니메이션을 즉시 완료할지 여부를 저장합니다.
+        let clearQueue = false;
+        let goToEnd = false;
+
+        // clearQueue 체크박스의 상태가 변경될 때마다 clearQueue 변수를 업데이트합니다.
+        $("#clearQueue").change(function () {
+          clearQueue = $(this).prop("checked");
+        });
+
+        // goToEnd 체크박스의 상태가 변경될 때마다 goToEnd 변수를 업데이트합니다.
+        $("#goToEnd").change(function () {
+          goToEnd = $(this).prop("checked");
+        });
+
+        // stopButton 클릭 이벤트 리스너를 설정합니다.
+        // 클릭 시 #box 요소의 애니메이션을 중지합니다.
+        $("#stopButton").click(function () {
+          // .stop() 메서드를 사용하여 현재 실행 중인 애니메이션을 중지합니다.
+          // clearQueue: true이면, 대기 중인 모든 애니메이션도 제거합니다.
+          // goToEnd: true이면, 현재 애니메이션을 즉시 완료하여 최종 상태로 이동합니다.
+          $("#box").stop(clearQueue, goToEnd);
+        });
+
+        // #box 요소의 초기 스타일을 설정합니다.
+        $("#box").css({
+          width: 100, // 너비를 100px로 설정
+          height: 100, // 높이를 100px로 설정
+          background: "red", // 배경색을 빨간색으로 설정
+        });
+
+        // 3초마다 반복되는 애니메이션을 설정합니다.
+        setInterval(function () {
+          $("#box")
+            .animate(
+              {
+                width: 200, // 너비를 200px로 확장
+              },
+              1000 // 애니메이션 지속 시간: 1초
+            )
+            .delay(1000) // 1초 대기
+            .animate(
+              {
+                width: 100, // 너비를 100px로 축소
+                height: 100, // 높이를 100px로 축소
+              },
+              1000 // 애니메이션 지속 시간: 1초
+            );
+        }, 3000); // 3초마다 반복
+      });
+    </script>
+  </head>
+  <body>
+    <!-- 애니메이션 제어를 위한 입력 요소들 -->
+    <label>clearQueue</label>
+    <input id="clearQueue" type="checkbox" />
+    <br />
+    <label>goToEnd</label>
+    <input id="goToEnd" type="checkbox" />
+    <br />
+    <button id="stopButton">Stop</button>
+    <!-- 애니메이션이 적용될 박스 요소 -->
+    <div id="box"></div>
+  </body>
+</html>

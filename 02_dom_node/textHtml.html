@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 이벤트
+      $(document).ready(function () {
+        // 내부 글자 변경
+        $("h1:nth-child(1)").text('<a href="#">text()</a>');
+        $("h1:nth-child(2)").html('<a href="#">ㅎㅎㅎㅎ</a>');
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Header - 0</h1>
+    <h1>Header - 1</h1>
+  </body>
+</html>
