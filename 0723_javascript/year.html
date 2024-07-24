@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>윤년 확인기</title>
+  </head>
+  <body>
+    <h1>윤년 확인기</h1>
+    <input type="number" id="yearInput" placeholder="연도를 입력하세요" />
+    <button onclick="checkYear()">확인</button>
+    <p id="result"></p>
+
+    <script>
+      function isYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+      }
+
+      function checkYear() {
+        const year = document.getElementById("yearInput").value;
+        const resultElement = document.getElementById("result");
+
+        if (year) {
+          if (isYear(year)) {
+            resultElement.textContent = `${year}년은 윤년입니다.`;
+          } else {
+            resultElement.textContent = `${year}년은 윤년이 아닙니다.`;
+          }
+        } else {
+          resultElement.textContent = "연도를 입력해주세요.";
+        }
+      }
+    </script>
+  </body>
+</html>
