@@ -52,14 +52,22 @@ console.log(star5);
 console.log("--------------");
 console.log("6.");
 
-let star6 = "";
-const space = " ";
-for (let i = 1; i < 6; i++) {
-  for (let j = 0; j < i; j++) {
-    star6 += "*";
+let result = "";
+for (let i = 0; i < 5; i++) {
+  let space = "";
+  let star = "";
+
+  for (let j = 0; j < 4 - i; j++) {
+    space += " ";
   }
-  star6 = star6 + "\n";
+
+  for (let k = 0; k <= i; k++) {
+    star += "*";
+  }
+
+  result += space + star + "\n";
 }
-console.log(star6);
+
+console.log(result);
 
 console.log("--------------");

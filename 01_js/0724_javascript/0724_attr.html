@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const rects = document.querySelectorAll(".rect");
+
+        rects.forEach((rect, index) => {
+          const width = (index + 1) * 100;
+          const src = `http://via.placeholder.com/${width}/100`;
+          rect.setAttribute("src", src);
+          rect.setAttribute("width", width);
+          rect.setAttribute("height", (index + 1) * 100);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <img class="rect" />
+    <img class="rect" />
+    <img class="rect" />
+    <img class="rect" />
+  </body>
+</html>
