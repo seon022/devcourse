@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      // 자바스크립트 배열크기가 한정되어 있기때문에 크게해서 오류 일으키는거
+      try {
+        const array = new Array(999999999999999);
+      } catch (exception) {
+        console.log(exception);
+        console.log("ㅎㅎㅎ");
+        console.log(`예외 이름: ${exception.name}`);
+        console.log(`예외 메시지: ${exception.message}`);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

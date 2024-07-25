@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      // 객체를 선언합니다.
+      const students = [];
+      students.push({ 이름: "구름", 국어: 87, 영어: 98, 수학: 88, 과학: 90 });
+      students.push({ 이름: "별이", 국어: 6, 영어: 80, 수학: 99, 과학: 34 });
+      students.push({ 이름: "겨울", 국어: 56, 영어: 98, 수학: 87, 과학: 76 });
+      students.push({ 이름: "바다", 국어: 43, 영어: 76, 수학: 23, 과학: 76 });
+
+      // 출력합니다.
+      let output = "이름\t총점\t평균\n";
+      for (const s of students) {
+        const sum = s.국어 + s.영어 + s.수학 + s.과학;
+        const average = sum / 4;
+        output += `${s.이름}\t${sum}\t\t${average}\n`;
+      }
+      console.log(output);
+    </script>
+  </head>
+  <body></body>
+</html>
