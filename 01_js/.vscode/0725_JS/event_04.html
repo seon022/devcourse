@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const input = document.querySelector("input");
+        const button = document.querySelector("button");
+        const p = document.querySelector("p");
+        button.addEventListener("click", () => {
+          // 입력을 숫자로 변환
+          const inch = Number(input.value);
+
+          // 숫자가 아니라면 바로 리턴
+          if (isNaN(inch)) {
+            p.textContent = "숫자를 입력해주세요";
+            return;
+          }
+          // 변환해서 출력
+          const cm = inch * 2.54;
+          p.textContent = `${cm}  cm`;
+        });
+
+        const degree = document.querySelector("#degree input");
+        const degBtn = document.querySelector("#degree button");
+        const degResult = document.querySelector("#degree p");
+        degBtn.addEventListener("click", () => {
+          // 입력을 숫자로 변환
+          const inputDegree = Number(degree.value);
+
+          // 숫자가 아니라면 바로 리턴
+          if (isNaN(inputDegree)) {
+            degResult.textContent = "숫자를 입력해주세요";
+            return;
+          }
+          // 변환해서 출력
+          const degCal = (inputDegree * 9) / 5 + 32;
+          degResult.textContent = `${degCal} °F`;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="text" /> inch
+    <button>계산</button>
+    <p></p>
+    <div id="degree">
+      <input type="text" /> °C
+      <button>계산</button>
+      <p></p>
+    </div>
+  </body>
+</html>

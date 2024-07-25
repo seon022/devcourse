@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>select</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const select = document.querySelector("select");
+        const p = document.querySelector("p");
+
+        select.addEventListener("change", (event) => {
+          const options = event.currentTarget.options;
+          console.log(options);
+          const index = event.currentTarget.options.selectedIndex;
+
+          p.textContent = `선택: ${options[index].textContent}`;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <select multiple>
+      <option>파스타</option>
+      <option>닭강정</option>
+      <option>샐러드</option>
+      <option>샤브샤브</option>
+    </select>
+    <p>선택:</p>
+  </body>
+</html>

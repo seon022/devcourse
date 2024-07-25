@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const imgs = document.querySelectorAll("img");
+
+        imgs.forEach((img) => {
+          // 마우스 오른쪽 버큰 클릭 막기
+          // 컨텍스트 메뉴를 출력하는 기본 이벤트를 제거
+          img.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <img src="http://placekitten.com/300/300" alt="" />
+  </body>
+</html>
