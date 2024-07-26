@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      // 클래스를 선언합니다.
+      class LifeCycle {
+        call() {
+          this.a();
+          this.b();
+          this.c();
+        }
+
+        a() {
+          console.log("a() 메소드를 호출합니다.");
+        }
+        b() {
+          console.log("b() 메소드를 호출합니다.");
+        }
+        c() {
+          console.log("c() 메소드를 호출합니다.");
+        }
+      }
+
+      // 상속
+      class Child extends LifeCycle {
+        a() {
+          console.log("자식의 a() 메소드입니다.");
+        }
+      }
+
+      // 인스턴스를 생성합니다.
+      new Child().call();
+
+      /*
+      코드 동작 설명
+
+      new Child().call()이 실행되면 Child 클래스의 인스턴스가 생성되고 call() 메소드가 호출됩니다.
+
+      call() 메소드는 LifeCycle 클래스에서 상속받은 것으로, this.a(), this.b(), this.c()를 순서대로 호출합니다.
+
+      this.a()가 호출될 때, Child 클래스에서 오버라이딩한 a() 메소드가 실행되어 "자식의 a() 메소드입니다."가 출력됩니다.
+
+      this.b()와 this.c()는 LifeCycle 클래스에서 상속받은 그대로 실행되어 각각 "b() 메소드를 호출합니다."와 "c() 메소드를 호출합니다."가 출력됩니다.
+      
+      이 예제는 클래스 상속과 메소드 오버라이딩의 기본 개념을 잘 보여주고 있습니다. Child 클래스는 부모 클래스의 일부 기능을 재정의하면서도 나머지 기능은 그대로 사용할 수 있음을 보여줍니다.
+    */
+    </script>
+  </head>
+  <body></body>
+</html>
