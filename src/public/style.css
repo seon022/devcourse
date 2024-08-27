@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #eee;
+    color: #666;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+/* 유효성 검사 */
+form input.error {
+    border-color: #ff0000;
+}
+
+form input.valid {
+    border-color: #00ff00;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* 폼 스타일 */
+.container {
+    max-width: 1100px;
+    box-sizing: border-box;
+    width: 94%;
+    margin: auto;
+    overflow: hidden;
+    padding: 6vh 4vw;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    border-radius: 4px;
+}
+
+h2 {
+    margin: 0 0 40px 0;
+    text-align: center;
+    font-size: 2rem;
+    color: #4c185f;
+}
+
+#customerForm > div {
+    width: 100%;
+    margin-bottom: 4vh;
+}
+form label {
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+}
+form input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border: 2px solid #411e4f;
+    border-radius: 4px;
+    height: 4vh;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 40px;
+    background-color: #4c185f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #250730;
+    color: #ffffff;
+}
+
+#msg {
+    color: #333;
+    font-weight: 600;
+    text-align: center;
+}
+
+#msg.mt30 {
+    margin-top: 30px;
+}
+/* 반응형 스타일 */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 94%;
+        margin: 20px auto;
+        padding: 4vh 4vw;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    form input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    form label {
+        font-size: 12px;
+    }
+
+    form input {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
