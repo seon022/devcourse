@@ -6,4 +6,4 @@ const CustomerModel = new Schema({
     email: { type: String, required: true },
     description: { type: String, required: false },
 });
-export default mongoose.model("CustomerModel", CustomerModel);
+export default mongoose.model("customers", CustomerModel);

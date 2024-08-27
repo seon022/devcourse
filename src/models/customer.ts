@@ -9,4 +9,4 @@ const CustomerModel: Schema = new Schema({
     description: { type: String, required: false },
 });
 
-export default mongoose.model<Customer>("CustomerModel", CustomerModel);
+export default mongoose.model<Customer>("customers", CustomerModel);

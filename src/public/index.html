@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원 정보 등록</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <div class="container">
+                <h2>회원 정보 등록</h2>
+                <!-- <button id="loginBtn">Login</button> -->
+                <form id="customerForm">
+                    <div>
+                        <label for="name">이름</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="이름을 입력해주세요."
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label for="address">주소</label>
+                        <input
+                            type="text"
+                            id="address"
+                            name="address"
+                            placeholder="주소를 입력해주세요."
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="이메일 주소를 입력해주세요."
+                            required
+                        />
+                    </div>
+                    <button type="submit">회원 등록</button>
+                </form>
+                <div id="msg"></div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
