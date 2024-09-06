@@ -3,7 +3,10 @@ import axios from "axios";
 import { useMutation, useQueryClient } from "react-query";
 
 const addItem = async (newItem) => {
-    const response = await axios.post("http://localhost:5000/api/add", newItem);
+    const response = await axios.post(
+        "http://localhost:5006/api/newtodo",
+        newItem
+    );
     return response.data;
 };
 

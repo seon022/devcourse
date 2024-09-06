@@ -7,7 +7,7 @@ const TodoItem = ({ todo }) => {
 
     const updateTodoStatus = async (todo) => {
         const response = await axios.put(
-            `http://localhost:5000/api/todo/${todo.id}`,
+            `http://localhost:5006/api/todo/${todo.id}`,
             { status: !todo.status }
         );
         return response.data;
@@ -15,7 +15,7 @@ const TodoItem = ({ todo }) => {
 
     const deleteTodo = async (todo) => {
         const response = await axios.delete(
-            `http://localhost:5000/api/todo/${todo.id}`
+            `http://localhost:5006/api/todo/${todo.id}`
         );
         return todo;
     };

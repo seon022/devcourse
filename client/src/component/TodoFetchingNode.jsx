@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem";
 import UseMutationEx from "./UseMutationEx";
 
 const fetchTodo = () => {
-    return fetch("http://localhost:5000/api/todo").then((response) =>
+    return fetch("http://localhost:5006/api/todos").then((response) =>
         response.json()
     );
 };
